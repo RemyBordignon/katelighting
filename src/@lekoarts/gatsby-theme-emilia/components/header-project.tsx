@@ -46,40 +46,7 @@ const HeaderProject = ({ title, areas, description, date }: Props) => {
     <ThemeHeader>
       <HeaderBackground />
       <Container sx={{ textAlign: `center`, my: 4, zIndex: 10 }}>
-        <animated.div style={backButtonProps}>
-          <Link
-            to="/"
-            aria-label={`${name} - Back to homepage`}
-            sx={{
-              display: `flex`,
-              alignItems: `center`,
-              color: `text`,
-              textDecoration: `none`,
-              svg: {
-                transition: `transform 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955)`,
-              },
-              "&:hover, &:focus": { svg: { transform: `translateX(-6px)` } },
-            }}
-          >
-            <LeftArrow />
-            <div
-              sx={{
-                overflow: `hidden`,
-                borderRadius: `full`,
-                width: `40px`,
-                height: `40px`,
-                display: `inline-block`,
-                boxShadow: `md`,
-                mx: 2,
-              }}
-            >
-              {avatar && avatar.file && avatar.file.childImageSharp && (
-                <Img fixed={avatar.file.childImageSharp.fixed} />
-              )}
-            </div>
-            <span sx={{ fontWeight: `medium` }}>{name}</span>
-          </Link>
-        </animated.div>
+
         <div sx={{ mt: 4, mb: [6, 6, 7] }}>
           <animated.div style={titleProps}>
             <Styled.h1>{title}</Styled.h1>
@@ -95,7 +62,7 @@ const HeaderProject = ({ title, areas, description, date }: Props) => {
               ))}
             </div>
             {description && (
-              <div sx={{ maxWidth: `900px`, mx: `auto`, mt: 5, p: { textAlign: `left` } }}>
+              <div sx={{ maxWidth: `1000px`, mx: `auto`, mt: 5, p: { textAlign: `left` } }}>
                 <MDXRenderer>{description}</MDXRenderer>
               </div>
             )}

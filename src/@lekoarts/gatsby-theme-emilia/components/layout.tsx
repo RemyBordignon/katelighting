@@ -1,13 +1,17 @@
 import React from "react"
 import { Global } from "@emotion/core"
 import { css, Styled } from "theme-ui"
-import Footer from "./footer"
+import { Container } from "theme-ui"
 import SEO from "./seo"
+import Navigation from "./navigation";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 type LayoutProps = { children: React.ReactNode }
 
 const Layout = ({ children }: LayoutProps) => (
   <Styled.root data-testid="theme-root">
+      <Navigation/>
     <Global
       styles={css({
         "*": {
@@ -38,7 +42,6 @@ const Layout = ({ children }: LayoutProps) => (
     />
     <SEO />
     {children}
-    <Footer />
   </Styled.root>
 )
 

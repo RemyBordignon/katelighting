@@ -1,11 +1,10 @@
 {
   "private": true,
-  "name": "emilia",
-  "description": "Minimalistic portfolio/photography site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.",
-  "version": "0.1.4",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "name": "Kate Lighting",
+  "description": "Kate baldwin lighting",
+  "version": "0.0.1",
+  "author": "Remy",
   "license": "MIT",
-  "starter-name": "gatsby-starter-portfolio-emilia",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -24,7 +23,11 @@
     "gatsby-plugin-offline": "^3.0.1",
     "gatsby-plugin-sitemap": "^2.2.7",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "bootstrap": "^4.4.1",
+    "reactstrap": "^8.4.1",
+    "@atlaskit/page": "11.0.11",
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
     "cross-env": "^5.2.1"

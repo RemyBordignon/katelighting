@@ -7,6 +7,9 @@ import Layout from "./layout"
 import HeaderProject from "./header-project"
 import ProjectPagination from "./project-pagination"
 import SEO from "./seo"
+import Page from '@atlaskit/page';
+import Card from "./projects";
+import CardSimple from "./cardSimple";
 
 type Props = {
   data: {
@@ -58,7 +61,7 @@ type Props = {
 }
 
 const Project = ({ data: { project, images }, pageContext: { prev, next } }: Props) => {
-  const imageFade = useSpring({ config: config.slow, delay: 800, from: { opacity: 0 }, to: { opacity: 1 } })
+  const imageFade = useSpring({ config: config.slow, delay: 300, from: { opacity: 0 }, to: { opacity: 1 } })
 
   return (
     <Layout>
@@ -69,14 +72,21 @@ const Project = ({ data: { project, images }, pageContext: { prev, next } }: Pro
         image={project.cover.childImageSharp.resize!.src}
       />
       <HeaderProject title={project.title} description={project.body} areas={project.areas} date={project.date} />
-      <Container sx={{ mt: [`-6rem`, `-6rem`, `-8rem`] }}>
-        {images.nodes.map(image => (
-          <animated.div key={image.name} style={imageFade}>
-            <Img fluid={image.childImageSharp.fluid} alt={image.name} sx={{ mb: [4, 4, 5], boxShadow: `xl` }} />
-          </animated.div>
-        ))}
+        <Container
+            sx={{
+              mt: `-8rem`,
+              display: `grid`,
+              gridTemplateColumns: [`1fr`, `repeat(auto-fill, minmax(350px, 1fr))`],
+              gridColumnGap: 4,
+            }}
+        >
+          {images.nodes.map(image => <CardSimple key={project.slug} sharp={image} title={image.name} />)}
+
+        </Container>
+      <Container>
         <ProjectPagination prev={prev} next={next} />
       </Container>
+
     </Layout>
   )
 }
