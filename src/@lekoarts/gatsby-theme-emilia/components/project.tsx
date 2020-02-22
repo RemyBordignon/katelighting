@@ -10,6 +10,7 @@ import SEO from "./seo"
 import Page from '@atlaskit/page';
 import Card from "./projects";
 import CardSimple from "./cardSimple";
+import { Row, Col } from 'reactstrap';
 
 type Props = {
   data: {
@@ -71,21 +72,26 @@ const Project = ({ data: { project, images }, pageContext: { prev, next } }: Pro
         pathname={project.slug}
         image={project.cover.childImageSharp.resize!.src}
       />
-      <HeaderProject title={project.title} description={project.body} areas={project.areas} date={project.date} />
-        <Container
-            sx={{
-              mt: `-8rem`,
-              display: `grid`,
-              gridTemplateColumns: [`1fr`, `repeat(auto-fill, minmax(350px, 1fr))`],
-              gridColumnGap: 4,
-            }}
-        >
-          {images.nodes.map(image => <CardSimple key={project.slug} sharp={image} title={image.name} />)}
 
-        </Container>
-      <Container>
+      <div sx={{ mt: [`-6rem`, `-6rem`, `-8rem`], height: '100%' }}>
+        <Row>
+          <Col sm={4}>
+            <div className={'position-fixed align-middle'} sx={{ mt: [`6rem`], minHeight: '100%' }}>
+              <HeaderProject title={project.title} description={project.body} areas={project.areas} date={project.date} />
+            </div>
+          </Col>
+          <Col sm={8}>
+            {images.nodes.map(image => (
+                <animated.div key={image.name} style={imageFade}>
+                  <Img fluid={image.childImageSharp.fluid} alt={image.name} sx={{ mb: [4, 4, 5], boxShadow: `xl` }} />
+                </animated.div>
+            ))}
+
+          </Col>
+        </Row>
+
         <ProjectPagination prev={prev} next={next} />
-      </Container>
+      </div>
 
     </Layout>
   )
