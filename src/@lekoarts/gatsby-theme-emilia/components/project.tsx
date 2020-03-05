@@ -72,16 +72,16 @@ const Project = ({ data: { project, images }, pageContext: { prev, next } }: Pro
       />
 
       <Container sx={{ height: '100%' }}>
-        <div className={'d-sm-none'}>
+        <div className={'d-md-none'}>
           <HeaderProject title={project.title} description={project.body} />
         </div>
         <Row>
-          <Col sm={4} className={'d-none d-sm-block'} >
+          <Col sm={0} md={4} className={'d-none d-md-block'} >
             <div style={{ display: 'flex', position: 'fixed', top: 0, left: 0, bottom: 0}} sx={{ mt: [`16rem`], minHeight: '100%', maxWidth: '35%' }}>
               <HeaderProject title={project.title} description={project.body} />
             </div>
           </Col>
-          <Col sm={8}>
+          <Col sm={12} md={8}>
             {images.nodes.map(image => (
                   <animated.div key={image.name} style={imageFade}>
                     <Img fluid={image.childImageSharp.fluid} alt={image.name} sx={{ mb: [4, 4, 5] }} />
