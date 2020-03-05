@@ -1,6 +1,6 @@
 require(`dotenv`).config({
   path: `.env`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -10,12 +10,6 @@ module.exports = {
     {
       resolve: `@lekoarts/gatsby-theme-emilia`,
       options: {},
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
     },
     `gatsby-plugin-sitemap`,
     {
@@ -45,4 +39,4 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
   ],
-}
+};

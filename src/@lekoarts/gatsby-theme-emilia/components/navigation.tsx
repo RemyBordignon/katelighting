@@ -23,23 +23,28 @@ const Navigation = () => {
 
     return (
         <div>
-            <Navbar fixed={"top"} color="light" light expand="sm">
-                <Nav className="mr-auto" navbar><NavItem><Link className={"nav-link"} to={'/'}>Kate Baldwin</Link></NavItem></Nav>
+            <Navbar fixed={"top"} color="light" light expand="sm" style={{paddingTop: '25px', paddingBottom: '25px', paddingRight: 30, paddingLeft: 26}}>
+                <Nav className="mr-auto" navbar>
+                    <NavItem >
+                        <Link className={"nav-link"} to={'/'}><h5>Kate Baldwin</h5></Link>
+                    </NavItem>
+                </Nav>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar className="">
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Link className={"nav-link"} to={'/about'}>About</Link>
+                            <Link className={"nav-link"} to={'/about'}><h6>About</h6></Link>
                         </NavItem>
                         <NavItem>
-                            <Link className={"nav-link"} to={'/press'}>Press</Link>
+                            <Link className={"nav-link"} to={'/press'}><h6>Press</h6></Link>
                         </NavItem>
                         <NavItem>
-                            <Link className={"nav-link"} to={'/contact'}>Contact</Link>
+                            <Link className={"nav-link"} to={'/contact'}><h6>Contact</h6></Link>
                         </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>
+            <div style={{paddingBottom: '6rem' }} />
         </div>
     );
 }

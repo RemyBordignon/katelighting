@@ -1,18 +1,17 @@
 import React from 'react'
 import Layout from "../@lekoarts/gatsby-theme-emilia/components/layout";
-import Header from "../@lekoarts/gatsby-theme-emilia/components/header";
 import PressMdx from '../../content/texts/press.mdx'
-import Container from "./about";
+import { Container } from "theme-ui"
 
 
 const Press = () => {
     return (
         <Layout>
-            <Header />
             <Container>
+                <h4>Press</h4>
+
                 <PressMdx />
             </Container>
-
         </Layout>
     )
 };

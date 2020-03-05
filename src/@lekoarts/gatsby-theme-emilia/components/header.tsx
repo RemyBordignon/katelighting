@@ -2,12 +2,7 @@
 import { Header as ThemeHeader, jsx, Styled } from "theme-ui"
 import { animated, useSpring, config } from "react-spring"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import useEmiliaConfig from "../hooks/use-emilia-config"
-import HeaderBackground from "./header-background"
-import Location from "../assets/location"
-import SocialMediaList from "./social-media-list"
-import Navigation from "./navigation";
 
 const Header = () => {
   const { name, location, assetsPath } = useEmiliaConfig()
@@ -39,10 +34,8 @@ const Header = () => {
 
   return (
     <ThemeHeader>
-      <HeaderBackground />
-      <div sx={{ textAlign: `center`, my: 5, zIndex: 10 }}>
-
-        <div data-testid="social-header" sx={{ mt: 4, mb: 4, a: { mx: 2 } }}>
+      <div sx={{ textAlign: `center`, zIndex: 10 }}>
+        <div data-testid="social-header" sx={{ mb: 4, a: { mx: 2 } }}>
           <animated.div style={fadeLongProps}>
           </animated.div>
         </div>

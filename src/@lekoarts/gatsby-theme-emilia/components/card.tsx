@@ -58,6 +58,7 @@ const Card = ({ item, overlay = `0, 0, 0`, shadow = shadowArray, inGrid = false 
           display: `flex`,
           justifyContent: `center`,
           alignItems: `center`,
+          textAlign: 'center',
           opacity: 0,
           transition: `all 0.3s ease-in-out`,
           color: `white`,

@@ -47,7 +47,6 @@ const Projects = ({ projects }: Props) => {
   if (projects.length === 0) {
     return (
       <Layout>
-        <Header />
         <Container>
           <Styled.p>
             Error getting projects
@@ -59,14 +58,12 @@ const Projects = ({ projects }: Props) => {
 
   return (
     <Layout>
-      <Header />
       <Main>
         <animated.div style={fadeUpProps}>
           <Container
             sx={{
-              mt: `-8rem`,
               display: `grid`,
-              gridTemplateColumns: [`1fr`, `repeat(auto-fill, minmax(350px, 1fr))`],
+              gridTemplateColumns: [`1fr`, `repeat(auto-fill, minmax(400px, 1fr))`],
               gridColumnGap: 4,
             }}
           >
@@ -77,7 +74,7 @@ const Projects = ({ projects }: Props) => {
               const px = [`64px`, `32px`, `16px`, `8px`, `4px`]
               const shadowArray = px.map(v => `rgba(${shadow}, 0.15) 0px ${v} ${v} 0px`)
 
-              return <Card key={project.slug} item={project} overlay={shadow} shadow={shadowArray} inGrid />
+              return <Card key={project.slug} item={project} shadow={shadowArray} inGrid />
             })}
           </Container>
         </animated.div>

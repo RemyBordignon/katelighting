@@ -74,7 +74,7 @@ export default {
       ...tailwind.styles.h1,
       fontSize: [4, 5],
       mt: 2,
-      color: `heading`,
+      color: `red`,
     },
     h2: {
       ...tailwind.styles.h2,

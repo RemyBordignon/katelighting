@@ -17,10 +17,8 @@ type Props = {
     project: {
       body: string
       excerpt: string
-      date: string
       slug: string
       title: string
-      areas: string[]
       cover: ChildImageSharp
     }
     images: {
@@ -73,25 +71,27 @@ const Project = ({ data: { project, images }, pageContext: { prev, next } }: Pro
         image={project.cover.childImageSharp.resize!.src}
       />
 
-      <div sx={{ mt: [`-6rem`, `-6rem`, `-8rem`], height: '100%' }}>
+      <Container sx={{ height: '100%' }}>
+        <div className={'d-sm-none'}>
+          <HeaderProject title={project.title} description={project.body} />
+        </div>
         <Row>
-          <Col sm={4}>
-            <div className={'position-fixed align-middle'} sx={{ mt: [`6rem`], minHeight: '100%' }}>
-              <HeaderProject title={project.title} description={project.body} areas={project.areas} date={project.date} />
+          <Col sm={4} className={'d-none d-sm-block'} >
+            <div style={{ display: 'flex', position: 'fixed', top: 0, left: 0, bottom: 0}} sx={{ mt: [`16rem`], minHeight: '100%', maxWidth: '35%' }}>
+              <HeaderProject title={project.title} description={project.body} />
             </div>
           </Col>
           <Col sm={8}>
             {images.nodes.map(image => (
-                <animated.div key={image.name} style={imageFade}>
-                  <Img fluid={image.childImageSharp.fluid} alt={image.name} sx={{ mb: [4, 4, 5], boxShadow: `xl` }} />
-                </animated.div>
+                  <animated.div key={image.name} style={imageFade}>
+                    <Img fluid={image.childImageSharp.fluid} alt={image.name} sx={{ mb: [4, 4, 5] }} />
+                  </animated.div>
             ))}
-
           </Col>
         </Row>
 
         <ProjectPagination prev={prev} next={next} />
-      </div>
+      </Container>
 
     </Layout>
   )
