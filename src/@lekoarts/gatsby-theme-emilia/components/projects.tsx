@@ -1,11 +1,9 @@
 /** @jsx jsx */
-/* eslint no-shadow: 0 */
 import { jsx, Container, Styled, Main } from "theme-ui"
 import { useSpring, animated, config } from "react-spring"
 import { graphql, useStaticQuery } from "gatsby"
 import { ChildImageSharp } from "../types"
 import Layout from "./layout"
-import Header from "./header"
 import Card from "./card"
 
 type Props = {

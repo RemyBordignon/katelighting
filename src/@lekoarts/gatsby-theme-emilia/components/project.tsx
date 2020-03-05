@@ -7,9 +7,6 @@ import Layout from "./layout"
 import HeaderProject from "./header-project"
 import ProjectPagination from "./project-pagination"
 import SEO from "./seo"
-import Page from '@atlaskit/page';
-import Card from "./projects";
-import CardSimple from "./cardSimple";
 import { Row, Col } from 'reactstrap';
 
 type Props = {

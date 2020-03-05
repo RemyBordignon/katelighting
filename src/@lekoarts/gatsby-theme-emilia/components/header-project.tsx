@@ -2,9 +2,7 @@
 import React from "react"
 import { Header as ThemeHeader, jsx, Styled, Container } from "theme-ui"
 import { animated, useSpring, config } from "react-spring"
-import { useStaticQuery, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import useEmiliaConfig from "../hooks/use-emilia-config"
 
 type Props = {
   title: string
@@ -12,30 +10,13 @@ type Props = {
 }
 
 const HeaderProject = ({ title, description }: Props) => {
-  const { name } = useEmiliaConfig();
-  const avatar = useStaticQuery(graphql`
-    query {
-      file(name: { eq: "avatar" }) {
-        childImageSharp {
-          fixed(width: 40, height: 40, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-    }
-  `)
 
   const titleProps = useSpring({
     config: config.slow,
     from: { opacity: 0, transform: `translate3d(0, -30px, 0)` },
     to: { opacity: 0.7, transform: `translate3d(0, 0, 0)` },
-  })
-  const backButtonProps = useSpring({
-    config: config.slow,
-    from: { opacity: 0, transform: `translate3d(-30px, 0, 0)` },
-    to: { opacity: 1, transform: `translate3d(0, 0, 0)` },
-  })
-  const infoProps = useSpring({ config: config.slow, delay: 500, from: { opacity: 0 }, to: { opacity: 1 } })
+  });
+  const infoProps = useSpring({ config: config.slow, delay: 500, from: { opacity: 0 }, to: { opacity: 1 } });
 
   return (
     <ThemeHeader>
