@@ -3,7 +3,6 @@ import Layout from "../@lekoarts/gatsby-theme-emilia/components/layout";
 import ContactMdx from '../../content/texts/contact.mdx'
 import { Container } from "theme-ui"
 
-
 const Contact = () => {
     return (
         <Layout>

@@ -7,8 +7,14 @@ const AboutMe = () => {
     return (
         <Layout>
             <Container>
-                <h4>About me</h4>
-                <About />
+                <div className={'d-md-none'}>
+                    <h5>About me</h5>
+                    <About />
+                </div>
+                <div className={'d-none d-md-block'} >
+                    <h4>About me</h4>
+                    <About />
+                </div>
             </Container>
         </Layout>
     )

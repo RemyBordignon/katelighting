@@ -29,7 +29,7 @@ const SEO = ({ title, description, pathname, image, children }: Props) => {
     siteLanguage,
     siteImage: defaultImage,
     author,
-  } = site
+  } = site;
 
   const seo = {
     title: title || defaultTitle,
