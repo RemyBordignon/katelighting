@@ -35,6 +35,13 @@ const Projects = ({ projects }: Props) => {
     }
   `)
 
+  const sortedProjects = projects.sort((p1, p2) => {
+    const d1 = new Date(p1.date);
+    const d2 = new Date(p2.date);
+    return d2 - d1;
+  });
+
+  console.log(sortedProjects);
   const fadeUpProps = useSpring({
     config: config.slow,
     delay: 600,
@@ -65,7 +72,7 @@ const Projects = ({ projects }: Props) => {
               gridColumnGap: 4,
             }}
           >
-            {projects.map((project, index) => {
+            {sortedProjects.map((project, index) => {
               const val = data.allProject.nodes[index].parent.fields.colorThief
               const shadow = `${val[0]}, ${val[1]}, ${val[2]}`
 
@@ -74,6 +81,8 @@ const Projects = ({ projects }: Props) => {
 
               return <Card key={project.slug} item={project} shadow={shadowArray} inGrid />
             })}
+
+            {console.log()}
           </Container>
         </animated.div>
       </Main>

@@ -1,19 +1,28 @@
 import React from 'react'
 import Layout from "../@lekoarts/gatsby-theme-emilia/components/layout";
-import About from '../../content/texts/about-me.mdx'
-import { Container } from "theme-ui"
+import About from '../../content/texts/about-me.mdx';
+import { Container } from "theme-ui";
+import kate from './kate.jpg'
 
 const AboutMe = () => {
     return (
         <Layout>
             <Container>
                 <div className={'d-md-none'}>
-                    <h5>About me</h5>
+                    {/* Mobile */}
                     <About />
+                    <img src={kate} alt={'kate'} width={'100%'} />
                 </div>
                 <div className={'d-none d-md-block'} >
-                    <h4>About me</h4>
-                    <About />
+                    <div style={{display: 'flex'}}>
+                        <div style={{minWidth: '500px', maxWidth: '500px'}}>
+                        <img src={kate} alt={'kate'} width={'100%'}/>
+                    </div>
+                        <div style={{width: '100%', paddingLeft: '2rem', marginTop: '4rem'}}>
+                            <About />
+                        </div>
+                    </div>
+
                 </div>
             </Container>
         </Layout>

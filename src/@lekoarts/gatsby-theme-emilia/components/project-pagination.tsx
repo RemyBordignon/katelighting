@@ -23,7 +23,7 @@ type Props = {
 }
 
 const ProjectPagination = ({ prev, next }: Props) => (
-  <div sx={{ mt: 6, mb: 4 }}>
+  <div sx={{ mt: 6, mb: 4, backgroundColor: 'red' }}>
     <div sx={{ display: `grid`, gridTemplateColumns: `250px 1fr`, alignItems: `center`, mb: 4 }}>
       <h2
         sx={{

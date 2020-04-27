@@ -7,7 +7,6 @@ const Contact = () => {
     return (
         <Layout>
             <Container>
-                <h4>Contact</h4>
 
                 <ContactMdx />
             </Container>

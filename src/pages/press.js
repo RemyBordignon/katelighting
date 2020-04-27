@@ -7,9 +7,9 @@ const Press = () => {
     return (
         <Layout>
             <Container>
-                <h4>Press</h4>
-
-                <PressMdx />
+                <div style={{textAlign: 'center', marginTop: '4rem'}}>
+                    <PressMdx />
+                </div>
             </Container>
         </Layout>
     )
